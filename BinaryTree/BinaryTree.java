@@ -1,5 +1,3 @@
-package BinaryTree;
-
 import java.util.Scanner;
 
 public class BinaryTree {
@@ -85,18 +83,5 @@ public class BinaryTree {
         public Node(int value) {
             this.value = value;
         }
-    }
-
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-    
-        BinaryTree tree = new BinaryTree();
-
-        tree.populate(in);
-
-        System.out.println("The binary tree is:");
-        tree.display();
-
-        in.close();
     }
 }
