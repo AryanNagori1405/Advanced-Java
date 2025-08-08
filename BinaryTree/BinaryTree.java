@@ -39,20 +39,22 @@ public class BinaryTree {
     }
 
     public void display() {
-        display(root, "");
+        display(root, "", true);
     }
 
-    private void display(Node node, String indent) {
+    private void display(Node node, String prefix, boolean isLeft) {
         if (node == null) {
             return;
         }
+
+        System.out.println(prefix + (isLeft ? "├── " : "└── ") + node.value);
         
-        System.out.println(indent + node.value);
-        display(node.leftNode, indent + "\t");
-        display(node.rightNode, indent + "\t");
+        // Recursively print left and right children
+        display(node.leftNode,  prefix + (isLeft ? "│   " : "    "), true);
+        display(node.rightNode, prefix + (isLeft ? "│   " : "    "), false);
     }
 
-    public class Node {
+    public class Node { 
         int value;
         Node leftNode;
         Node rightNode;
