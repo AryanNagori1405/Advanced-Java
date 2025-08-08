@@ -56,6 +56,48 @@ public class BinarySearchTree {
         return Math.abs(leftHeight - rightHeight) <= 1 
             && balanced(node.leftNode) && balanced(node.rightNode);
     }
+
+    public void preorderTraversal() {
+        preorderTraversal(root);
+    }
+
+    private void preorderTraversal(Node node) {
+        if (node == null) {
+            return;
+        }
+        
+        System.out.print(node.getValue() + " ");
+        preorderTraversal(node.leftNode);
+        preorderTraversal(node.rightNode);
+    }
+    
+    public void inorderTraversal() {
+        inorderTraversal(root);
+    }
+    
+    private void inorderTraversal(Node node) {
+        if (node == null) {
+            return;
+        }
+        
+        inorderTraversal(node.leftNode);
+        System.out.print(node.getValue() + " ");
+        inorderTraversal(node.rightNode);
+    }
+    
+    public void postorderTraversal() {
+        postorderTraversal(root);
+    }
+
+    private void postorderTraversal(Node node) {
+        if (node == null) {
+            return;
+        }
+
+        postorderTraversal(node.leftNode);
+        postorderTraversal(node.rightNode);
+        System.out.print(node.getValue() + " ");
+    }
  
     public void display() {
         display(root, "Root Node: ");
