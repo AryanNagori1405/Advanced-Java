@@ -38,6 +38,29 @@ public class BinaryTree {
         }
     }
 
+    // public void display() {
+    //     display(root, 0);
+    // }
+
+    // private void display(Node node, int level) {
+    //     if (node == null) {
+    //         return;
+    //     }
+
+    //     display(node.rightNode, level + 1);
+
+    //     if (level != 0) {
+    //         for (int i = 0; i < level - 1; i++) {
+    //             System.out.print("|\t\t");
+    //         }
+    //         System.out.println("|----->" + node.value);
+    //     } else {
+    //         System.out.println(node.value);
+    //     }
+
+    //     display(node.leftNode, level + 1);
+    // }
+
     public void display() {
         display(root, "", true);
     }
